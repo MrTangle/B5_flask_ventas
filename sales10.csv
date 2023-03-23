@@ -1,0 +1,11 @@
+region,pais,tipo_producto,canal_ventas,prioridad,id_pedido,fecha_venta,unidades,precio_unitario,coste_unitario,ingresos_totales,coste_total,beneficio
+North America,United States,Electronics,Online,High,1001,2022-01-02,3,250,175,750,525,225
+Europe,Germany,Toys,Retail,Low,1002,2022-01-03,5,15,8,75,40,35
+Asia,Japan,Apparel,Online,Medium,1003,2022-01-05,2,50,30,100,60,40
+South America,Brazil,Beauty,Retail,Low,1004,2022-01-08,7,12,5,84,35,49
+Africa,Egypt,Toys,Online,Medium,1005,2022-01-10,4,20,10,80,40,40
+North America,Canada,Electronics,Retail,High,1006,2022-01-12,6,300,200,1800,1200,600
+Europe,Spain,Beauty,Online,Low,1007,2022-01-13,1,25,20,25,20,5
+Asia,India,Apparel,Retail,Medium,1008,2022-01-15,8,30,20,240,160,80
+South America,Argentina,Electronics,Online,High,1009,2022-01-18,2,500,350,1000,700,300
+Africa,South Africa,Toys,Retail,Medium,1010,2022-01-20,3,10,6,30,18,12

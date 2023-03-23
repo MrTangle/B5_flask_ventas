@@ -6,7 +6,7 @@ class TestFlaskBase(TestCase):
     def create_app(self):
         self.app = myApp.app
         return myApp.app
-        
+
         self.app = app
         return app
     
