@@ -1,33 +1,35 @@
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pigmonchu SL</title>
-    </head>
-    <body>
-        <header>
-            PIGMONCHU S.L.
-        </header>
-        <h1>Ventas por región</h1>
-        <table>
-            <tr>
-                <th>Región</th>
-                <th>Ventas</th>
-                <th>Beneficios</th>
-            </tr>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pigmonchu SL</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        PIGMONCHU S.L.
+    </header>
+    <h1>Ventas por región</h1>
+    <table>
+        <tr>
+            <th>Región</th>
+            <th>Ventas</th>
+            <th>Beneficios</th>
+        </tr>
             {% for region, data in ventas.items() %}
-            <tr>
-                <td>{{ region }}</td>
-                <td>{{ data.ingresos }}</td>
-                <td>{{ data.beneficios }}</td>
-            </tr>
+        <tr>
+            <td class="region">{{ region }}</td>
+            <td>{{ data.ingresos }}</td>
+            <td>{{ data.beneficios }}</td>
+        </tr>
             {% endfor %}
-        </table>
-        &nbsp;
-        <footer>
-            &copy; 2023 - Todos los derechos reservados
-        </footer>
-    </body>
+    </table>
+    <footer>
+        &copy; 2023 - Todos los derechos reservados
+    </footer>
+</body>
 </html>
