@@ -1,23 +1,24 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-Ventas por región
+Ventas por país
 {% endblock %}
     
 {% block contenido %}
-    <h1>Ventas por región</h1>
+    <h1>Ventas en {{ region_nm }}, desglosadas por país</h1>
     <table>
         <tr>
-            <th>Región</th>
+            <th>País</th>
             <th>Ventas</th>
             <th>Beneficios</th>
         </tr>
-            {% for region, data in ventas.items() %}
+            {% for pais, data in ventas_pais.items() %}
         <tr>
-            <td class="region">{{ region }}</td>
-            <td>{{ data.ingresos | round(2, "floor")}}€</td>
+            <td class="pais">{{ pais }}</td>
+            <td>{{ data.ingresos }}</td>
             <td>{{ data.beneficios }}</td>
         </tr>
             {% endfor %}
     </table>
+
 {% endblock %}

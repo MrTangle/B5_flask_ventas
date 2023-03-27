@@ -1,3 +1,7 @@
+:root {
+    --main-color: darkcyan;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,28 +10,28 @@
 
 header, footer {
     padding: 10px;
-    background-color: darkcyan;
+    background-color: var(--main-color);
     color: white;
 }
 
 table {
     width: 80%;
     margin: 10px auto;
-    border: 1px solid darkcyan;
+    border: 1px solid var(--main-color);
 }
 
 td, th {
-    border: 1px solid darkcyan;
+    border: 1px solid var(--main-color);
     padding: 10px;
 }
 
 th {
-    background-color: darkcyan;
+    background-color: var(--main-color);
     color: white;
 }
 
 .region {
     font-weight: bold;
-    color: darkgreen;
+    color: var(--main-color);
     text-align: center;
 }
