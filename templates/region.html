@@ -14,9 +14,13 @@ Ventas por región
         </tr>
             {% for region, data in ventas.items() %}
         <tr>
-            <td class="region">{{ region }}</td>
-            <td>{{ data.ingresos | round(2, "floor")}}€</td>
-            <td>{{ data.beneficios }}</td>
+            <td class="region">
+                <a href="/paises?region={{ region }}">
+                    {{ region }}
+                </a>
+            </td>
+            <td>{{ data.ingresos | round(2, "floor")}} €</td>
+            <td>{{ data.beneficios | round(2, "floor")}} €</td>
         </tr>
             {% endfor %}
     </table>
