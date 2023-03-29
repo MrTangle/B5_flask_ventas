@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Alta de producto
+{% endblock %}
+
+{% block contenido %}
+    <h1>Alta de producto</h1>
+    <form action="/addproducto">
+        <label for="tipo_producto">Tipo de producto:</label>
+        <input type="text" name="tipo_producto" id="tipo_producto">
+        <label for="precio_unitario">Precio unitario:</label>
+        <input type="number" name="precio_unitario" id="precio_unitario" step="0.01">
+        <label for="coste_unitario">Coste unitario:</label>
+        <input type="number" name="coste_unitario" id="coste_unitario" step="0.01">
+        <input type="submit" value="Aceptar">
+    </form>
+{% endblock %}
