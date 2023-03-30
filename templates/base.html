@@ -6,12 +6,16 @@
     <title>Pigmonchu SL | {% block titulo %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/normalize.css">
     <link rel="stylesheet" href="/static/skeleton.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
         PIGMONCHU S.L.
     </header>
     <section class="container">
+        <div class="menu">
+            <a href="/">Ventas</a> | <a href="/productos">Productos</a>
+        </div>
         {% block contenido %}{% endblock %}
     </section>
     <footer>

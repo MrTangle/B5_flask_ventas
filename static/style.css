@@ -1,16 +1,6 @@
-:root {
-    --main-color: darkcyan;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 header, footer {
     padding: 10px;
-    background-color: var(--main-color);
+    background-color: #33c3f0;
     color: white;
 }
 
@@ -22,40 +12,8 @@ footer {
     margin-top: 20px;
 }
 
-table {
-    width: 80%;
-    margin: 10px auto;
-    border: 1px solid var(--main-color);
-}
-
-td, th {
-    border: 1px solid var(--main-color);
-    padding: 10px;
-}
-
-th {
-    background-color: var(--main-color);
-    color: white;
-}
-
-.region {
+.menu {
+    padding-top: 20px;
+    padding-bottom: 40px;
     font-weight: bold;
-    color: var(--main-color);
-    text-align: center;
-}
-
-.boton {
-    border: 2px solid var(--main-color);
-    border-radius: 5px;
-    margin-left: 50px;
-    text-decoration: none;
-    font-size: 0.6em;
-    font-weight: normal;
-    padding: 5px;
-    color: var(--main-color);
-}
-
-.boton:hover {
-    color: white;
-    background-color: var(--main-color);
 }
