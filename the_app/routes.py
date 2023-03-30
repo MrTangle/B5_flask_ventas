@@ -1,5 +1,7 @@
 import csv, sqlite3
 from the_app import app
+from the_app.forms import ProductForm
+
 from flask import render_template, request, redirect, url_for
 
 BASE_DATOS = "./data/ventas.db"
@@ -52,8 +54,10 @@ def productos():
 
 @app.route("/addproducto", methods=["GET", "POST"])
 def addproduct():
+    form = ProductForm()
+
     if request.method == "GET":
-        return render_template("newproduct.html")
+        return render_template("newproduct.html", form=form)
     else:
         conn = sqlite3.connect(BASE_DATOS)
         cur = conn.cursor()
@@ -66,3 +70,4 @@ def addproduct():
         conn.close()
 
         return redirect(url_for("productos"))
+

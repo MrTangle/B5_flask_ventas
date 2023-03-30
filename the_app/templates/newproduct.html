@@ -7,13 +7,20 @@ Alta de producto
 {% block contenido %}
     <h1>Alta de producto</h1>
     <form class="u-full-width" action="/addproducto" method="post">
-        <label for="tipo_producto">Tipo de producto:</label>
+        {{ form.tipo_producto(class="u-full-width") }}
+        {{ form.precio_unitario(class="u-full-width") }}
+        {{ form.coste_unitario(class="u-full-width") }}
+        {{ form.submit(class="button-primary") }}
+
+
+
+        <!--label for="tipo_producto">Tipo de producto:</label>
         <input class="u-full-width" type="text" name="tipo_producto" id="tipo_producto">
         <label for="precio_unitario">Precio unitario:</label>
         <input class="u-full-width" type="number" name="precio_unitario" id="precio_unitario" step="0.01">
         <label for="coste_unitario">Coste unitario:</label>
         <input class="u-full-width" type="number" name="coste_unitario" id="coste_unitario" step="0.01">
         <br />
-        <input class="button-primary" type="submit" value="Aceptar">
+        <input class="button-primary" type="submit" value="Aceptar"-->
     </form>
 {% endblock %}
