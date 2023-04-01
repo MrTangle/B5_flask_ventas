@@ -15,7 +15,7 @@ Listado de productos
         </tr>
             {% for producto in productos %}
         <tr>
-            <td class="producto">{{ producto[1] }}</td>
+            <td class="producto"><a href="/modificaproducto?id={{producto[0]}}">{{ producto[1] }}</a></td>
             <td>{{ producto[2] }}</td>
             <td>{{ producto[3] }}</td>
         </tr>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Detalle de producto
+{% endblock %}
+
+{% block contenido %}
+<h1>Detalle de producto</h1>
+<form action="/modificaproducto" class="u-full-width" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.tipo_producto.label }}
+    {{ form.tipo_producto(class="u-full-width", placeholder="Producto") }}
+    {% if form.tipo_producto.errors %}
+        {% for error in form.tipo_producto.errors %}
+            <p class="error-msg">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {{ form.precio_unitario.label }}
+    {{ form.precio_unitario(class="u-full-width", placeholder="Precio unitario") }}
+    {% if form.precio_unitario.errors %}
+        {% for error in form.precio_unitario.errors %}
+            <p class="error-msg">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {{ form.coste_unitario.label }}
+    {{ form.coste_unitario(class="u-full-width", placeholder="Coste unitario") }}
+    {% if form.coste_unitario.errors %}
+        {% for error in form.coste_unitario.errors %}
+            <p class="error-msg">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {{ form.submit(class="button-primary") }}
+</form>
+{% endblock %}
