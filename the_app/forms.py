@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SubmitField
-from wtforms.validators import DataRequired, Length
+from wtforms.validators import DataRequired, Length, ValidationError
 
 
 class ProductForm(FlaskForm):
@@ -9,3 +9,7 @@ class ProductForm(FlaskForm):
     coste_unitario = FloatField("Coste unitario", validators=[DataRequired()])
 
     submit = SubmitField("Aceptar")
+
+    def validate_coste_unitario(self, field):
+        if field.data > self.precio_unitario.data:
+            raise ValidationError("El coste unitario ha de ser menor o igual que el precio unitario")

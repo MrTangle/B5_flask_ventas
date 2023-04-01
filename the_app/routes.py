@@ -54,20 +54,24 @@ def productos():
 
 @app.route("/addproducto", methods=["GET", "POST"])
 def addproduct():
-    form = ProductForm()
+    form = ProductForm(request.form)
 
     if request.method == "GET":
         return render_template("newproduct.html", form=form)
     else:
-        conn = sqlite3.connect(BASE_DATOS)
-        cur = conn.cursor()
-        query = "INSERT INTO productos (tipo_producto, precio_unitario, coste_unitario) values (?, ?, ?);"
-        datos = (request.values.get("tipo_producto"), request.values.get("precio_unitario"), request.values.get("coste_unitario"))
+        if form.validate():
+            conn = sqlite3.connect(BASE_DATOS)
+            cur = conn.cursor()
+            query = "INSERT INTO productos (tipo_producto, precio_unitario, coste_unitario) values (?, ?, ?);"
+            datos = (request.values.get("tipo_producto"), request.values.get("precio_unitario"), request.values.get("coste_unitario"))
 
-        cur.execute(query, datos)
+            cur.execute(query, datos)
 
-        conn.commit()
-        conn.close()
+            conn.commit()
+            conn.close()
 
-        return redirect(url_for("productos"))
+            return redirect(url_for("productos"))
+        
+        else:
+            return render_template("newproduct.html", form=form)
 
