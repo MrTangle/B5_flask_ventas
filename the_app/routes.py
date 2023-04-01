@@ -4,11 +4,11 @@ from the_app.forms import ProductForm
 
 from flask import render_template, request, redirect, url_for
 
-BASE_DATOS = "./data/ventas.db"
+BASE_DATOS = app.config["BASE_DATOS"]
 
 @app.route('/')
 def index():
-    fVentas = open("./sales10.csv", "r")
+    fVentas = open(app.config["VENTAS"], "r")
     csvreader = csv.reader(fVentas, delimiter=",")
 
     d = {}
@@ -27,7 +27,7 @@ def index():
 def paises():
     region_name = request.values["region"]
 
-    fVentas = open("./sales10.csv", "r")
+    fVentas = open(app.config["VENTAS"], "r")
     csvreader = csv.reader(fVentas, delimiter=",")
     d = {}
     for linea in csvreader:

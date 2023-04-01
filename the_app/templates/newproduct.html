@@ -7,9 +7,10 @@ Alta de producto
 {% block contenido %}
     <h1>Alta de producto</h1>
     <form class="u-full-width" action="/addproducto" method="post">
-        {{ form.tipo_producto(class="u-full-width") }}
-        {{ form.precio_unitario(class="u-full-width") }}
-        {{ form.coste_unitario(class="u-full-width") }}
+        {{ form.hidden_tag() }}
+        {{ form.tipo_producto(class="u-full-width", placeholder="Producto") }}
+        {{ form.precio_unitario(class="u-full-width", placeholder="Precio unitario") }}
+        {{ form.coste_unitario(class="u-full-width", placeholder="Coste unitario") }}
         {{ form.submit(class="button-primary") }}
 
 
