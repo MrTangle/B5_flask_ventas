@@ -57,7 +57,7 @@ def addproduct():
     form = ProductForm(request.form)
 
     if request.method == "GET":
-        return render_template("newproduct.html", form=form)
+        return render_template("newproduct.html", form=form, error_gral=False)
     else:
         if form.validate():
             conn = sqlite3.connect(BASE_DATOS)
@@ -70,11 +70,13 @@ def addproduct():
                 conn.close()
             except Exception as e:
                 print("INSERT - Error en acceso a base de datos: {}".format(e))
+                conn.close()
+                return render_template("newproduct.html", form=form, error_gral="{}".format(e))
 
             return redirect(url_for("productos"))
         
         else:
-            return render_template("newproduct.html", form=form)
+            return render_template("newproduct.html", form=form, error_gral=False)
 
 @app.route("/modificaproducto", methods=["GET", "POST"])
 def modifica_producto():
