@@ -31,7 +31,10 @@ Detalle de producto
             <p class="error-msg">{{ error }}</p>
         {% endfor %}
     {% endif %}
+    <div class="u-pull-right">
+        {{ form.modificar(class="button-primary") }}
+        {{ form.borrar(class="button-primary") }}
+    </div>
 
-    {{ form.submit(class="button-primary") }}
 </form>
 {% endblock %}
